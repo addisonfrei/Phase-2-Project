@@ -1,0 +1,15 @@
+{
+    "inventory": [
+      {
+        "id": 1,
+        "name": "Antiques Bought & Sold",
+        "image": "/images/antiquesBought.jpg"
+        
+      },
+      {
+        "id": 2,
+        "name": "Black Horse Tavern",
+        "image": "/images/blackHorse.jpg"
+      }
+    ]
+  }
