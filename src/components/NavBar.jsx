@@ -1,20 +1,28 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+
 
 const NavBar = () => {
   return (
     <div>
-        <h1>Hello, welcome to your Phase 2 Project!</h1>
-        <Stack direction="row" spacing={2}>
-        <Button variant="contained">Link 1</Button>
-        <Button variant="contained" disabled>
-            Link 2
-        </Button>
-        <Button variant="contained" href="#contained-buttons">
-            Link 3
-        </Button>
-        </Stack>
+        <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static">
+                <Toolbar>
+                <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    Phase 2 Project
+                </Typography>
+                <Button color="inherit" to='/' component= { Link }>Home</Button>
+                <Button color="inherit" to='/inventory' component= { Link }>View Inventory</Button>
+                <Button color="inherit" to='/add' component= { Link }>Add Item</Button>
+                <Button color="inherit">Login</Button>
+                </Toolbar>
+            </AppBar>
+        </Box>
     </div>
   )
 }
