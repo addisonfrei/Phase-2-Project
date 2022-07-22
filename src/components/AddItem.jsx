@@ -25,7 +25,7 @@ function AddItem() {
         required
         id="outlined-required"
         label="Image"
-        defaultValue="Image URL"
+        value="Image URL"
       />
       <TextField
         required
@@ -34,7 +34,12 @@ function AddItem() {
         defaultValue="49.99"
       />
       <br />
-      <Button size="medium" onClick={() => console.log("Clicked")}>Submit</Button>
+      <Button 
+        size="medium" 
+        onClick={() => console.log("Clicked")}
+      >
+        Submit
+      </Button>
 
       
     

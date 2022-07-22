@@ -7,17 +7,9 @@ import Button from '@mui/material/Button';
 
 
 function Inventory() {
-    const [inventory, setInventory] = useState([])
-
-    useEffect(() => {
-        fetch('http://localhost:3000/inventory')
-            .then(r => r.json())
-            .then(data => setInventory(data))
-    }, [])
+   
     
     const signs = inventory.map((inventory) => {
-        
-        
         return (
             <Card variant="outlined" key={inventory.id} >
                 <CardContent>
