@@ -6,7 +6,7 @@ import Button from '@mui/material/Button';
 
 
 
-function Inventory() {
+function Inventory( { inventory } ) {
    
     
     const signs = inventory.map((inventory) => {

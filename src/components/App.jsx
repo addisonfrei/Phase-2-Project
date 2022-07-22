@@ -19,7 +19,7 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path='/' element={ <HomePage />} />
-        <Route path='/inventory' element={ <Inventory />} />
+        <Route path='/inventory' element={ <Inventory inventory={inventory}/>} />
         <Route path='/add' element={ <AddItem />} />
       </Routes>
     </Router>
