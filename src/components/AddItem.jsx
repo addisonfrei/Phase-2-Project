@@ -7,20 +7,13 @@ function AddItem() {
   const [formData, setFormData] = useState({
       "name": "",
       "image": "",
-      "price": "$"
+      "price": ""
   })
-  console.log(formData)
 
-  function handleChange(e) {
-    if (e.target.name === 'price') {
-      setFormData({...formData,
-      [e.target.name]: "$" + e.target.value 
+  function handleFormChange(e) {
+    setFormData({...formData,
+      [e.target.name]: e.target.value
     })
-    } else {
-      setFormData({...formData,
-        [e.target.name]: e.target.value
-      })
-    }
   }
 
   return (
@@ -39,24 +32,24 @@ function AddItem() {
         id="outlined-required"
         label="Name"
         name="name"
-        defaultValue="Item Name"
-        onChange={handleChange}
+        value={formData.name}
+        onChange={handleFormChange}
       />
       <TextField
         required
         id="outlined-required"
-        label='Image'
+        label="Image"
         name='image'
         value={formData.image}
-        onChange={handleChange}
+        onChange={handleFormChange}
       />
       <TextField
         required
         id="outlined-required"
         label="Item Price"
         name='price'
-        defaultValue="49.99"
-        onChange={handleChange}
+        value={formData.price}
+        onChange={handleFormChange}
       />
       <br />
       <Button 
