@@ -27,7 +27,7 @@ function Inventory() {
                 </CardContent>
                 <CardActions>
                     <Button size="small">Edit</Button>
-                    <Button id="delete" size="small">Delete</Button>
+                    <Button id="delete" size="small" onClick={() => console.log('Delete')}>Delete</Button>
                 </CardActions>
             </Card>
         )
