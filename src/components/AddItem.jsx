@@ -12,9 +12,15 @@ function AddItem() {
   console.log(formData)
 
   function handleChange(e) {
-    setFormData({...formData,
-      [e.target.name]: e.target.value
+    if (e.target.name === 'price') {
+      setFormData({...formData,
+      [e.target.name]: "$" + e.target.value 
     })
+    } else {
+      setFormData({...formData,
+        [e.target.name]: e.target.value
+      })
+    }
   }
 
   return (
