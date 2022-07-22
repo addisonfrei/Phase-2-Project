@@ -16,6 +16,10 @@ function AddItem() {
     })
   }
 
+  function handleFormSubmit() {
+    console.log(formData)
+  }
+
   return (
     <Box
     component="form"
@@ -54,7 +58,7 @@ function AddItem() {
       <br />
       <Button 
         size="medium" 
-        onClick={() => console.log("Clicked")}
+        onClick={handleFormSubmit}
       >
         Submit
       </Button>
