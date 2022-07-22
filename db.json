@@ -4,73 +4,73 @@
       "id": 1,
       "name": "Antiques Bought & Sold",
       "image": "images/antiquesBought.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 2,
       "name": "Black Horse Tavern Inn",
       "image": "images/blackHorse.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 3,
       "name": "Butcher Shop",
       "image": "images/butcherShop.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 4,
       "name": "Butter & Eggs",
       "image": "images/butterEggs.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 5,
       "name": "Tavern 1765",
       "image": "images/imagejpeg_1.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 6,
       "name": "Adams & Co. Auctioneers",
       "image": "images/imagejpeg_2 2.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 7,
       "name": "Poultry and Eggs",
       "image": "images/imagejpeg_3 2.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 8,
       "name": "Olde & Early",
       "image": "images/olde.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 9,
       "name": "Pumpkins for Sale",
       "image": "images/pumpkins.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 10,
       "name": "Tavern",
       "image": "images/tavern.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 11,
       "name": "Tavern - Drinks Food & Rooms",
       "image": "images/tavernDrinksFood.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     },
     {
       "id": 12,
       "name": "Tobacco and Cigars",
       "image": "images/tobacco.jpg",
-      "price": "$49.99"
+      "price": "49.99"
     }
   ] 
 }
