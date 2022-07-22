@@ -14,7 +14,7 @@ function Inventory( { inventory } ) {
             <Card variant="outlined" key={inventory.id} >
                 <CardContent>
                     <h1>{inventory.name}</h1>
-                    <h3>{inventory.price}</h3>
+                    <h3>${inventory.price}</h3>
                     <img src={inventory.image} alt={inventory.name} height='400px' width='600px'/>
                 </CardContent>
                 <CardActions>
