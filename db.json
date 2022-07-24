@@ -71,6 +71,12 @@
       "name": "Tobacco and Cigars",
       "image": "images/tobacco.jpg",
       "price": "49.99"
+    },
+    {
+      "name": "Test Antique",
+      "image": "https://st2.depositphotos.com/6088656/10819/v/950/depositphotos_108199274-stock-illustration-vintage-metal-sign-antiques-and.jpg",
+      "price": "10.99",
+      "id": 13
     }
   ]
 }

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -9,6 +10,8 @@ function AddItem( { onFormSubmit } ) {
       "image": "",
       "price": ""
   })
+
+  const navigate = useNavigate()
 
   function handleFormChange(e) {
     setFormData({...formData,
@@ -23,6 +26,7 @@ function AddItem( { onFormSubmit } ) {
       body: JSON.stringify(formData)})
       .then(r => r.json())
       .then(newObj => onFormSubmit(newObj))
+      navigate('/inventory')
   }
 
   return (
