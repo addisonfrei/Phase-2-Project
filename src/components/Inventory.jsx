@@ -11,11 +11,17 @@ function Inventory( { inventory } ) {
     
     const signs = inventory.map((inventory) => {
         return (
-            <Card variant="outlined" key={inventory.id} >
+            <Card sx={{maxWidth: 635}} variant="outlined" key={inventory.id} >
                 <CardContent>
                     <h1>{inventory.name}</h1>
                     <h3>${inventory.price}</h3>
-                    <img src={inventory.image} alt={inventory.name} height='400px' width='600px'/>
+                    <img 
+                        src={inventory.image} 
+                        alt={inventory.name} 
+                        height='500px' 
+                        width='600px' 
+                        className='center'
+                    />
                 </CardContent>
                 <CardActions>
                     <Button size="small">Edit</Button>
