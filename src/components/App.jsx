@@ -14,13 +14,17 @@ const App = () => {
           .then(data => setInventory(data))
   }, [])
 
+  function handleAddItem(newObj) {
+    console.log(newObj)
+  }
+
   return (
     <Router>
       <NavBar />
       <Routes>
         <Route path='/' element={ <HomePage />} />
         <Route path='/inventory' element={ <Inventory inventory={inventory}/>} />
-        <Route path='/add' element={ <AddItem inventory={inventory} setInventory={setInventory} />} />
+        <Route path='/add' element={ <AddItem onFormSubmit={handleAddItem} />} />
       </Routes>
     </Router>
     

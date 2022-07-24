@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-function AddItem( { inventory, setInventory } ) {
+function AddItem( { onFormSubmit } ) {
   const [formData, setFormData] = useState({
       "name": "",
       "image": "",
@@ -17,17 +17,12 @@ function AddItem( { inventory, setInventory } ) {
   }
 
   function handleFormSubmit() {
-    console.log(formData)
     fetch('http://localhost:3000/inventory', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(formData)})
       .then(r => r.json())
-      .then(newObj => {
-        const updatedInventory = {...inventory, newObj}
-        console.log('updatedInventory',updatedInventory)
-        
-      })
+      .then(newObj => onFormSubmit(newObj))
   }
 
   return (
