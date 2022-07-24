@@ -23,7 +23,11 @@ function AddItem( { inventory, setInventory } ) {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(formData)})
       .then(r => r.json())
-      .then(data => console.log(data))
+      .then(newObj => {
+        const updatedInventory = {...inventory, newObj}
+        console.log('updatedInventory',updatedInventory)
+        
+      })
   }
 
   return (
