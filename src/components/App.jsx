@@ -16,6 +16,8 @@ const App = () => {
 
   function handleAddItem(newObj) {
     console.log(newObj)
+    const updatedInventory = {...inventory, newObj}
+    console.log('UpdatedInventory', updatedInventory)
   }
 
   return (
