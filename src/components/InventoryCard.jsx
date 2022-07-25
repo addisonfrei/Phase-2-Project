@@ -53,6 +53,7 @@ const InventoryCard = ( { inventory, onDeleteItem } ) => {
                 <Button 
                     size="small" 
                     onClick={handleStockChange}
+                    color="error"
                 >
                     Out of Stock
                 </Button>
