@@ -13,7 +13,7 @@ const NavBar = () => {
             <AppBar position="static">
                 <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    R.J. Frei Primatives
+                    R.J. Frei Primitives
                 </Typography>
                 <Button color="inherit" to='/' component= { Link }>Home</Button>
                 <Button color="inherit" to='/inventory' component= { Link }>View Inventory</Button>
