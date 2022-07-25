@@ -5,10 +5,6 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-// import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
-// import CardActions from '@mui/material/CardActions';
-// import Button from '@mui/material/Button';
 
 const InventoryCard = ( { inventory, onDeleteItem } ) => {
     const { id, name, price, image } = inventory
@@ -20,8 +16,7 @@ const InventoryCard = ( { inventory, onDeleteItem } ) => {
             .then(r => r.json())
             .then(() => onDeleteItem(inventory))
     }
-
-
+    
     return (
         <Card >
           <CardContent>

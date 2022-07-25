@@ -13,7 +13,7 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-function InventoryContainer( { inventoryList, onDeleteItem } ) { 
+const InventoryContainer = ( { inventoryList, onDeleteItem } ) => { 
     const inventoryCard = inventoryList.map(inventory => (
             <Grid item xs={6} key={inventory.id}>
               <Item><InventoryCard inventory={inventory} onDeleteItem={onDeleteItem}/></Item>
@@ -26,7 +26,6 @@ function InventoryContainer( { inventoryList, onDeleteItem } ) {
           </Grid>
         </Box>
       );
-  
 }
 
 export default InventoryContainer
