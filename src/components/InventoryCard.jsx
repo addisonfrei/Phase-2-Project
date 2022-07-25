@@ -12,29 +12,27 @@ const InventoryCard = ( { inventory, onDeleteItem } ) => {
             method: 'DELETE',
         })
             .then(r => r.json())
-            .then(() => {
-                onDeleteItem(inventory)
-            })
+            .then(() => onDeleteItem(inventory))
     }
 
   return (
     <Card sx={{maxWidth: 635}} variant="outlined" key={id} >
-                <CardContent>
-                    <h1>{name}</h1>
-                    <h3>${price}</h3>
-                    <img 
-                        src={image} 
-                        alt={name} 
-                        height='500px' 
-                        width='600px' 
-                        className='center'
-                    />
-                </CardContent>
-                <CardActions>
-                    <Button size="small">Edit</Button>
-                    <Button id="delete" size="small" onClick={handleItemDelete}>Delete</Button>
-                </CardActions>
-            </Card>
+        <CardContent>
+            <h1>{name}</h1>
+            <h3>${price}</h3>
+            <img 
+                src={image} 
+                alt={name} 
+                height='500px' 
+                width='600px' 
+                className='center'
+            />
+        </CardContent>
+        <CardActions>
+            <Button size="small">Edit</Button>
+            <Button id="delete" size="small" onClick={handleItemDelete}>Delete</Button>
+        </CardActions>
+    </Card>
   )
 }
 
