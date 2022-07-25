@@ -1,8 +1,14 @@
 import React from 'react'
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+// import Card from '@mui/material/Card';
+// import CardContent from '@mui/material/CardContent';
+// import CardActions from '@mui/material/CardActions';
+// import Button from '@mui/material/Button';
 
 const InventoryCard = ( { inventory, onDeleteItem } ) => {
     const { id, name, price, image } = inventory
@@ -15,25 +21,33 @@ const InventoryCard = ( { inventory, onDeleteItem } ) => {
             .then(() => onDeleteItem(inventory))
     }
 
-  return (
-    <Card sx={{maxWidth: 635}} variant="outlined" key={id} >
-        <CardContent>
-            <h1>{name}</h1>
-            <h3>${price}</h3>
+
+    return (
+        <Card >
+          <CardContent>
             <img 
                 src={image} 
                 alt={name} 
                 height='500px' 
                 width='600px' 
-                className='center'
+                //className='center'
             />
-        </CardContent>
-        <CardActions>
+          </CardContent>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="div">
+              {name}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {price}
+            </Typography>
+          </CardContent>
+          <CardActions>
             <Button size="small">Edit</Button>
-            <Button id="delete" size="small" onClick={handleItemDelete}>Delete</Button>
-        </CardActions>
-    </Card>
-  )
+            <Button size="small" onClick={handleItemDelete}>Delete</Button>
+          </CardActions>
+        </Card>
+      );
 }
 
 export default InventoryCard
+

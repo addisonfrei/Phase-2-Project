@@ -8,17 +8,18 @@ import Button from '@mui/material/Button';
 
 
 const NavBar = () => {
+  const isLoggedIn = true
   return (
     <div>
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    Phase 2 Project
+                    R.J. Frei Primatives
                 </Typography>
                 <Button color="inherit" to='/' component= { Link }>Home</Button>
                 <Button color="inherit" to='/inventory' component= { Link }>View Inventory</Button>
-                <Button color="inherit" to='/add' component= { Link }>Add Item</Button>
+                {isLoggedIn ? <Button color="inherit" to='/add' component= { Link }>Add Item</Button> : null}
                 <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
