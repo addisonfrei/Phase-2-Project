@@ -17,7 +17,10 @@ const App = () => {
   function handleAddItem(newObj) {
     const updatedInventory = [...inventoryList, newObj]
     setInventoryList(updatedInventory)
-    
+  }
+  function handleDeleteItem(itemToDelete) {
+    const updatedInventory = inventoryList.filter((inventory) => inventory.id !== itemToDelete.id)
+    setInventoryList(updatedInventory)
   }
 
   return (
@@ -30,7 +33,7 @@ const App = () => {
         />
         <Route 
           path='/inventory' 
-          element={ <InventoryContainer inventoryList={inventoryList}/>} 
+          element={ <InventoryContainer inventoryList={inventoryList} onDeleteItem={handleDeleteItem}/>} 
         />
         <Route 
           path='/add' 

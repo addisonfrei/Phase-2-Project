@@ -4,8 +4,19 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 
-const InventoryCard = ({inventory}) => {
+const InventoryCard = ( { inventory, onDeleteItem } ) => {
     const { id, name, price, image } = inventory
+
+    function handleItemDelete() {
+        fetch(`http://localhost:3000/inventory/${id}`, {
+            method: 'DELETE',
+        })
+            .then(r => r.json())
+            .then(() => {
+                onDeleteItem(inventory)
+            })
+    }
+
   return (
     <Card sx={{maxWidth: 635}} variant="outlined" key={id} >
                 <CardContent>
@@ -21,7 +32,7 @@ const InventoryCard = ({inventory}) => {
                 </CardContent>
                 <CardActions>
                     <Button size="small">Edit</Button>
-                    <Button id="delete" size="small" >Delete</Button>
+                    <Button id="delete" size="small" onClick={handleItemDelete}>Delete</Button>
                 </CardActions>
             </Card>
   )
