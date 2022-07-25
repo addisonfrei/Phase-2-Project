@@ -2,21 +2,21 @@ import React, {useState, useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import HomePage from "./HomePage";
 import NavBar from "./NavBar";
-import Inventory from "./Inventory";
+import InventoryContainer from "./InventoryContainer";
 import AddItem from "./AddItem";
 
 const App = () => {
-  const [inventory, setInventory] = useState([])
+  const [inventoryList, setInventoryList] = useState([])
 
   useEffect(() => {
       fetch('http://localhost:3000/inventory')
           .then(r => r.json())
-          .then(data => setInventory(data))
+          .then(data => setInventoryList(data))
   }, [])
 
   function handleAddItem(newObj) {
-    const updatedInventory = [...inventory, newObj]
-    setInventory(updatedInventory)
+    const updatedInventory = [...inventoryList, newObj]
+    setInventoryList(updatedInventory)
     
   }
 
@@ -24,9 +24,18 @@ const App = () => {
     <Router>
       <NavBar />
       <Routes>
-        <Route path='/' element={ <HomePage />} />
-        <Route path='/inventory' element={ <Inventory inventory={inventory}/>} />
-        <Route path='/add' element={ <AddItem onFormSubmit={handleAddItem} />} />
+        <Route 
+          path='/' 
+          element={ <HomePage />} 
+        />
+        <Route 
+          path='/inventory' 
+          element={ <InventoryContainer inventoryList={inventoryList}/>} 
+        />
+        <Route 
+          path='/add' 
+          element={ <AddItem onFormSubmit={handleAddItem} />} 
+        />
       </Routes>
     </Router>
     
