@@ -6,9 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-
 const NavBar = () => {
-  const isLoggedIn = true
   return (
     <div>
         <Box sx={{ flexGrow: 1 }}>
@@ -19,7 +17,7 @@ const NavBar = () => {
                 </Typography>
                 <Button color="inherit" to='/' component= { Link }>Home</Button>
                 <Button color="inherit" to='/inventory' component= { Link }>View Inventory</Button>
-                {isLoggedIn ? <Button color="inherit" to='/add' component= { Link }>Add Item</Button> : null}
+                <Button color="inherit" to='/add' component= { Link }>Add Item</Button>
                 <Button color="inherit">Login</Button>
                 </Toolbar>
             </AppBar>
