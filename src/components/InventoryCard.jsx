@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -7,7 +7,6 @@ import Typography from '@mui/material/Typography';
 
 const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
     const { id, name, price, image, available } = inventory
-    const [isAvailable, setIsAvailable] = useState(true) 
 
     function handleItemDelete() {
         fetch(`http://localhost:3001/inventory/${id}`, {
@@ -16,11 +15,6 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
             .then(r => r.json())
             .then(() => onDeleteItem(inventory))
     }
-
-    function handleStockChange() {
-        setIsAvailable((isAvailable) => !isAvailable)
-    }
-
 
     return (
         <Card >
@@ -43,9 +37,9 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
               {available}
             </Typography>
           </CardContent>
-          <CardActions>
+          <CardActions >
             {isLoggedIn ? (
-              <Button size="small" onClick={handleItemDelete}>Delete</Button>
+              <Button size="small" align="center" onClick={handleItemDelete}>Delete</Button>
             ) : (
               null
             )}
