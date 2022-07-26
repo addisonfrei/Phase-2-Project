@@ -9,7 +9,7 @@ const App = () => {
   const [inventoryList, setInventoryList] = useState([])
 
   useEffect(() => {
-      fetch('http://localhost:3000/inventory')
+      fetch('http://localhost:3001/inventory')
           .then(r => r.json())
           .then(data => setInventoryList(data))
   }, [])

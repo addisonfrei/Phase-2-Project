@@ -20,7 +20,7 @@ function AddItem( { onFormSubmit } ) {
   }
 
   function handleFormSubmit() {
-    fetch('http://localhost:3000/inventory', {
+    fetch('http://localhost:3001/inventory', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(formData)})
