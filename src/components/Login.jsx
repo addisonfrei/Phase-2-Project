@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 
 const Login = ({isLoggedIn, setIsLoggedIn}) => {
     const [user, setUser] = useState({
-        "username": "",
+      "username": "",
       "password": "",
     })
     const navigate = useNavigate()
@@ -17,11 +17,9 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
           [e.target.name]: e.target.value
         })
       }
-    console.log(user)
 
     function handleFormSubmit() {
         if (user.username === 'admin' && user.password === 'admin') {
-            console.log("logged in")
             setIsLoggedIn(isLoggedIn => !isLoggedIn)
             navigate('/inventory')
         } else {
@@ -38,7 +36,7 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
     >
     <div>
       <br />
-      <p>Username and password is admin for demo purposes</p>
+      <p>Username and Password is <span style={{fontWeight: 'bold'}}>admin</span> for demo purposes</p>
       <TextField
         required
         id="outlined-required"
@@ -46,7 +44,6 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
         name="username"
         value={user.name}
         onChange={handleFormChange}
-        
       />
       <TextField
         required
@@ -55,11 +52,11 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
         name='password'
         value={user.password}
         onChange={handleFormChange}
-        
       />
       <br />
       <Button 
-        size="medium" 
+        size="small" 
+        variant="contained"
         onClick={handleFormSubmit}
       >
         Submit

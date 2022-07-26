@@ -24,7 +24,6 @@ const App = () => {
     const updatedInventory = inventoryList.filter((inventory) => inventory.id !== itemToDelete.id)
     setInventoryList(updatedInventory)
   }
-  console.log(isLoggedIn)
 
   return (
     <Router>

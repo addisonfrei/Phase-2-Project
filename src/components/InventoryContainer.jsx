@@ -16,7 +16,13 @@ const Item = styled(Paper)(({ theme }) => ({
 const InventoryContainer = ( { inventoryList, onDeleteItem, isLoggedIn } ) => { 
     const inventoryCard = inventoryList.map(inventory => (
             <Grid item xs={6} key={inventory.id}>
-              <Item><InventoryCard inventory={inventory} onDeleteItem={onDeleteItem} isLoggedIn={isLoggedIn}/></Item>
+              <Item>
+                <InventoryCard 
+                  inventory={inventory} 
+                  onDeleteItem={onDeleteItem} 
+                  isLoggedIn={isLoggedIn}
+                />
+              </Item>
             </Grid>
         ))
     return (

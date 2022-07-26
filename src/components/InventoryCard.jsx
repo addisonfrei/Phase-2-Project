@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
     const { id, name, price, image, available } = inventory
@@ -39,7 +40,7 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
           </CardContent>
           <CardActions >
             {isLoggedIn ? (
-              <Button size="small" align="center" onClick={handleItemDelete}>Delete</Button>
+              <Button variant="contained" size="small" startIcon={<DeleteIcon />} onClick={handleItemDelete}>Delete</Button>
             ) : (
               null
             )}
@@ -49,20 +50,3 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
 }
 
 export default InventoryCard
-
-// {isAvailable ? (
-//   <Button 
-//       size="small" 
-//       onClick={handleStockChange}
-//   >
-//       In Stock
-//   </Button>
-// ) : (
-//   <Button 
-//       size="small" 
-//       onClick={handleStockChange}
-//       color="error"
-//   >
-//       Out of Stock
-//   </Button>
-// )}

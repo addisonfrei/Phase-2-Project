@@ -4,6 +4,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import SendIcon from '@mui/icons-material/Send';
+import { Select } from '@mui/material';
 
 const stock = [
   {
@@ -78,6 +80,7 @@ function AddItem( { onFormSubmit } ) {
       <TextField
           select
           id="outlined-required"
+          defaultValue=""
           label="Select"
           name="available"
           onChange={handleFormChange}
@@ -89,7 +92,9 @@ function AddItem( { onFormSubmit } ) {
         </TextField>
       <br />
       <Button 
-        size="medium" 
+        variant="contained"
+        size="small"
+        startIcon={<SendIcon />}
         onClick={handleFormSubmit}
       >
         Submit
