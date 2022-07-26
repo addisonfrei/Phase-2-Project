@@ -3,12 +3,25 @@ import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+
+const stock = [
+  {
+    value: 'In Stock',
+    label: 'In Stock',
+  },
+  {
+    value: 'Out of Stock',
+    label: 'Out of Stock',
+  },
+];
 
 function AddItem( { onFormSubmit } ) {
   const [formData, setFormData] = useState({
       "name": "",
       "image": "",
-      "price": ""
+      "price": "",
+      "available": ""
   })
 
   const navigate = useNavigate()
@@ -62,6 +75,18 @@ function AddItem( { onFormSubmit } ) {
         value={formData.price}
         onChange={handleFormChange}
       />
+      <TextField
+          select
+          id="outlined-required"
+          label="Select"
+          name="available"
+          onChange={handleFormChange}
+          helperText="Please select availability"
+          variant="standard"
+        >
+          <MenuItem value="In Stock">In Stock</MenuItem>
+          <MenuItem value="Out of Stock">Out of Stock</MenuItem>
+        </TextField>
       <br />
       <Button 
         size="medium" 

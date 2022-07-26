@@ -36,7 +36,7 @@ const App = () => {
         />
         <Route 
           path='/inventory' 
-          element={ <InventoryContainer inventoryList={inventoryList} onDeleteItem={handleDeleteItem}/>} 
+          element={ <InventoryContainer inventoryList={inventoryList} onDeleteItem={handleDeleteItem} isLoggedIn={isLoggedIn}/>} 
         />
         <Route 
           path='/add' 

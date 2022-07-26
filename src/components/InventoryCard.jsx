@@ -5,8 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const InventoryCard = ( { inventory, onDeleteItem } ) => {
-    const { id, name, price, image } = inventory
+const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
+    const { id, name, price, image, available } = inventory
     const [isAvailable, setIsAvailable] = useState(true) 
 
     function handleItemDelete() {
@@ -20,6 +20,7 @@ const InventoryCard = ( { inventory, onDeleteItem } ) => {
     function handleStockChange() {
         setIsAvailable((isAvailable) => !isAvailable)
     }
+
 
     return (
         <Card >
@@ -35,28 +36,19 @@ const InventoryCard = ( { inventory, onDeleteItem } ) => {
             <Typography gutterBottom variant="h5" component="div">
               {name}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body1">
               {price}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {available}
             </Typography>
           </CardContent>
           <CardActions>
-            {isAvailable ? (
-                <Button 
-                    size="small" 
-                    onClick={handleStockChange}
-                >
-                    In Stock
-                </Button>
+            {isLoggedIn ? (
+              <Button size="small" onClick={handleItemDelete}>Delete</Button>
             ) : (
-                <Button 
-                    size="small" 
-                    onClick={handleStockChange}
-                    color="error"
-                >
-                    Out of Stock
-                </Button>
+              null
             )}
-            <Button size="small" onClick={handleItemDelete}>Delete</Button>
           </CardActions>
         </Card>
       );
@@ -64,3 +56,19 @@ const InventoryCard = ( { inventory, onDeleteItem } ) => {
 
 export default InventoryCard
 
+// {isAvailable ? (
+//   <Button 
+//       size="small" 
+//       onClick={handleStockChange}
+//   >
+//       In Stock
+//   </Button>
+// ) : (
+//   <Button 
+//       size="small" 
+//       onClick={handleStockChange}
+//       color="error"
+//   >
+//       Out of Stock
+//   </Button>
+// )}

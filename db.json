@@ -2,87 +2,101 @@
   "inventory": [
     {
       "id": 1,
-      "name": "Antiques Bought & Sold",
+      "name": "Antiques Bought and Sold",
       "image": "images/antiquesBought.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 2,
       "name": "Black Horse Tavern Inn",
       "image": "images/blackHorse.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 3,
       "name": "Butcher Shop",
       "image": "images/butcherShop.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 4,
       "name": "Butter & Eggs",
       "image": "images/butterEggs.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 5,
       "name": "Tavern 1765",
       "image": "images/imagejpeg_1.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 6,
       "name": "Adams & Co. Auctioneers",
       "image": "images/imagejpeg_2 2.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 7,
       "name": "Poultry and Eggs",
       "image": "images/imagejpeg_3 2.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 8,
       "name": "Olde & Early",
       "image": "images/olde.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 9,
       "name": "Pumpkins for Sale",
       "image": "images/pumpkins.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 10,
       "name": "Tavern",
       "image": "images/tavern.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 11,
       "name": "Tavern - Drinks Food & Rooms",
       "image": "images/tavernDrinksFood.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "id": 12,
       "name": "Tobacco and Cigars",
       "image": "images/tobacco.jpg",
-      "price": "49.99"
+      "price": "49.99",
+      "available": "In Stock"
     },
     {
       "name": "Checkerboard",
       "image": "images/checkerboard.jpeg",
       "price": "54.99",
-      "id": 13
+      "id": 13,
+      "available": "In Stock"
     },
     {
       "name": "Test Antique",
       "image": "https://st2.depositphotos.com/6088656/10819/v/950/depositphotos_108199274-stock-illustration-vintage-metal-sign-antiques-and.jpg",
       "price": "99.99",
-      "id": 14
+      "id": 14,
+      "available": "In Stock"
     }
   ]
 }

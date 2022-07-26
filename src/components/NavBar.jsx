@@ -17,7 +17,11 @@ const NavBar = ( { isLoggedIn, setIsLoggedIn }) => {
                 </Typography>
                 <Button color="inherit" to='/' component= { Link }>Home</Button>
                 <Button color="inherit" to='/inventory' component= { Link }>View Inventory</Button>
-                <Button color="inherit" to='/add' component= { Link }>Add Item</Button>
+                {isLoggedIn ? (
+                  <Button color="inherit" to='/add' component= { Link }>Add Item</Button>
+                ) : (
+                  null
+                )}
                 {isLoggedIn ? (
                   <Button color="inherit" onClick={() => setIsLoggedIn(isLoggedIn => !isLoggedIn)}>Log Out</Button>
                 ) : (
