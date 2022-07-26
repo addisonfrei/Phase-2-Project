@@ -10,6 +10,8 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
         "username": "",
       "password": "",
     })
+    const navigate = useNavigate()
+
     function handleFormChange(e) {
         setUser({...user,
           [e.target.name]: e.target.value
@@ -21,6 +23,7 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
         if (user.username === 'admin' && user.password === 'admin') {
             console.log("logged in")
             setIsLoggedIn(isLoggedIn => !isLoggedIn)
+            navigate('/inventory')
         } else {
             alert('Invalid login!  Please try again!')
         }
