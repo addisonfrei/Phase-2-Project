@@ -31,19 +31,17 @@ function AddItem( { onFormSubmit } ) {
 
   return (
     <Box
-    component="form"
-    sx={{
-      '& .MuiTextField-root': { m: 1, width: '25ch' },
-    }}
-    // noValidate
-    // autoComplete="off"
-  >
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+    >
     <div>
       <br />
       <TextField
         required
         id="outlined-required"
-        label="Name"
+        label="name"
         name="name"
         value={formData.name}
         onChange={handleFormChange}
@@ -71,9 +69,6 @@ function AddItem( { onFormSubmit } ) {
       >
         Submit
       </Button>
-
-      
-    
     </div>
   </Box>
   )
