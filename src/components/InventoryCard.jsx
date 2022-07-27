@@ -16,7 +16,7 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
             .then(r => r.json())
             .then(() => onDeleteItem(inventory))
     }
-
+   
     return (
         <Card >
           <CardContent>
@@ -32,7 +32,7 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
               {name}
             </Typography>
             <Typography variant="body1">
-              {price}
+              ${price}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {available}
@@ -40,7 +40,14 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
           </CardContent>
           <CardActions >
             {isLoggedIn ? (
-              <Button variant="contained" size="small" startIcon={<DeleteIcon />} onClick={handleItemDelete}>Delete</Button>
+              <Button 
+                variant="contained" 
+                size="small" 
+                startIcon={<DeleteIcon />} 
+                onClick={handleItemDelete}
+                >
+                  Delete
+              </Button>
             ) : (
               null
             )}

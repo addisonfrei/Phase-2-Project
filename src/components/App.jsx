@@ -21,7 +21,9 @@ const App = () => {
     setInventoryList(updatedInventory)
   }
   function handleDeleteItem(itemToDelete) {
-    const updatedInventory = inventoryList.filter((inventory) => inventory.id !== itemToDelete.id)
+    const updatedInventory = inventoryList.filter((inventory) => 
+      inventory.id !== itemToDelete.id
+    )
     setInventoryList(updatedInventory)
   }
 
@@ -35,7 +37,11 @@ const App = () => {
         />
         <Route 
           path='/inventory' 
-          element={ <InventoryContainer inventoryList={inventoryList} onDeleteItem={handleDeleteItem} isLoggedIn={isLoggedIn}/>} 
+          element={ <InventoryContainer 
+              inventoryList={inventoryList} 
+              onDeleteItem={handleDeleteItem} 
+              isLoggedIn={isLoggedIn}
+            />} 
         />
         <Route 
           path='/add' 
@@ -43,7 +49,10 @@ const App = () => {
         />
         <Route 
           path='/login' 
-          element={ <Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} 
+          element={ <Login 
+              isLoggedIn={isLoggedIn} 
+              setIsLoggedIn={setIsLoggedIn}
+            />} 
         />
       </Routes>
     </Router>

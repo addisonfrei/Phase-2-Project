@@ -47,7 +47,8 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
       />
       <TextField
         required
-        id="outlined-required"
+        type="password"
+        id="outlined-required-password"
         label="Password"
         name='password'
         value={user.password}
@@ -65,6 +66,5 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
   </Box>
     )
 }
- 
 
 export default Login

@@ -5,18 +5,6 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import SendIcon from '@mui/icons-material/Send';
-import { Select } from '@mui/material';
-
-const stock = [
-  {
-    value: 'In Stock',
-    label: 'In Stock',
-  },
-  {
-    value: 'Out of Stock',
-    label: 'Out of Stock',
-  },
-];
 
 function AddItem( { onFormSubmit } ) {
   const [formData, setFormData] = useState({
@@ -35,13 +23,17 @@ function AddItem( { onFormSubmit } ) {
   }
 
   function handleFormSubmit() {
-    fetch('http://localhost:3001/inventory', {
+    if (formData.name !== "" && formData.image !== "" && formData.price !== "") {
+      fetch('http://localhost:3001/inventory', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify(formData)})
       .then(r => r.json())
       .then(newObj => onFormSubmit(newObj))
       navigate('/inventory')
+    } else {
+      alert("All items are required to submit to inventory")
+    }
   }
 
   return (
@@ -56,7 +48,7 @@ function AddItem( { onFormSubmit } ) {
       <TextField
         required
         id="outlined-required"
-        label="name"
+        label="Name"
         name="name"
         value={formData.name}
         onChange={handleFormChange}
