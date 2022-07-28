@@ -26,7 +26,7 @@ const InventoryContainer = ( { inventoryList, onDeleteItem, isLoggedIn } ) => {
             </Grid>
         ))
     return (
-        <Box sx={{ flexGrow: 1 }} style={{marginTop: '20px'}}>
+        <Box style={{marginTop: "75px"}}>
           <Grid container spacing={2}>
             { inventoryCard }
           </Grid>

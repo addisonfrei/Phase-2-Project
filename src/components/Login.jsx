@@ -11,13 +11,11 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
       "password": "",
     })
     const navigate = useNavigate()
-    const error = document.getElementById("loginError")
 
     function handleFormChange(e) {
       setUser({...user,
         [e.target.name]: e.target.value
       })
-      error.textContent=""
     }
 
     function handleFormSubmit() {
@@ -25,8 +23,9 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
           setIsLoggedIn(isLoggedIn => !isLoggedIn)
           navigate('/inventory')
       } else {
-          error.style.color="red"
-          error.textContent="Invalid credentials! Please try again."
+        const error = document.getElementById("loginError")
+        error.textContent="Invalid credentials! Please try again."  
+        error.style.color="red"
       }
     }
 
@@ -36,6 +35,7 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
         sx={{
         '& .MuiTextField-root': { m: 1, width: '25ch' },
         }}
+        style={{ marginTop: "50px" }}
     >
     <div>
       <br />

@@ -18,7 +18,7 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
     }
    
     return (
-        <Card >
+        <Card>
           <CardContent>
             <img 
                 src={image} 

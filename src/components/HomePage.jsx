@@ -2,7 +2,7 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div align='center'>
+    <div align='center' style={{ marginTop: "75px" }}>
         <h1>R. J. Frei Primitives</h1>
         <h3>R. J. Frei Primitives specializes in antiques and antique reproductions</h3>
         <p>  All items on this site are available for purchase.  Special request ordering is available.</p>

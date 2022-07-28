@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 const NavBar = ( { isLoggedIn, setIsLoggedIn } ) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar >
             <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 R.J. Frei Primitives

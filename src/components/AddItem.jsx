@@ -15,17 +15,15 @@ function AddItem( { onFormSubmit } ) {
   })
 
   const navigate = useNavigate()
-  const error = document.getElementById("formError")
 
   function handleFormChange(e) {
     setFormData({...formData,
       [e.target.name]: e.target.value
     })
-    error.textContent=""
   }
 
   function handleFormSubmit() {
-    if (formData.name !== "" && formData.image !== "" && formData.price !== "") {
+    if (formData.name !== "" && formData.image !== "" && formData.price !== "" && formData.available !== "") {
       fetch('http://localhost:3001/inventory', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -34,8 +32,9 @@ function AddItem( { onFormSubmit } ) {
       .then(newObj => onFormSubmit(newObj))
       navigate('/inventory')
     } else {
+      const error = document.getElementById("formError")
+      error.textContent="Name, image, price, and availability are required to submit item into inventory"
       error.style.color="red"
-      error.textContent="Name, image, and price are required to submit item into inventory"
     }
   }
 
@@ -45,6 +44,7 @@ function AddItem( { onFormSubmit } ) {
       sx={{
         '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
+      style={{ marginTop: "75px" }}
   >
     <div>
       <br />
@@ -75,7 +75,7 @@ function AddItem( { onFormSubmit } ) {
       <TextField
           select
           id="outlined-required"
-          defaultValue="In Stock"
+          defaultValue=""
           label="Select"
           name="available"
           onChange={handleFormChange}
