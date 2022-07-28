@@ -15,11 +15,13 @@ function AddItem( { onFormSubmit } ) {
   })
 
   const navigate = useNavigate()
+  const error = document.getElementById("formError")
 
   function handleFormChange(e) {
     setFormData({...formData,
       [e.target.name]: e.target.value
     })
+    error.textContent=""
   }
 
   function handleFormSubmit() {
@@ -32,7 +34,8 @@ function AddItem( { onFormSubmit } ) {
       .then(newObj => onFormSubmit(newObj))
       navigate('/inventory')
     } else {
-      alert("Name, image, and price are required to submit to inventory")
+      error.style.color="red"
+      error.textContent="Name, image, and price are required to submit item into inventory"
     }
   }
 
@@ -83,6 +86,7 @@ function AddItem( { onFormSubmit } ) {
           <MenuItem value="Out of Stock">Out of Stock</MenuItem>
         </TextField>
       <br />
+      <p id="formError"> </p>
       <Button 
         variant="contained"
         size="small"

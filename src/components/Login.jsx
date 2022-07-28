@@ -11,22 +11,23 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
       "password": "",
     })
     const navigate = useNavigate()
+    const error = document.getElementById("loginError")
 
     function handleFormChange(e) {
-        setUser({...user,
-          [e.target.name]: e.target.value
-        })
-      }
+      setUser({...user,
+        [e.target.name]: e.target.value
+      })
+      error.textContent=""
+    }
 
     function handleFormSubmit() {
-        if (user.username === 'admin' && user.password === 'admin') {
-            setIsLoggedIn(isLoggedIn => !isLoggedIn)
-            navigate('/inventory')
-        } else {
-            const error = document.getElementById("errorMessage")
-            error.style.color="red"
-            error.textContent="Invalid credentials! Please try again."
-        }
+      if (user.username === 'admin' && user.password === 'admin') {
+          setIsLoggedIn(isLoggedIn => !isLoggedIn)
+          navigate('/inventory')
+      } else {
+          error.style.color="red"
+          error.textContent="Invalid credentials! Please try again."
+      }
     }
 
     return (
@@ -57,9 +58,7 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
         onChange={handleFormChange}
       />
       <br />
-      <p id="errorMessage">
-        
-      </p>
+      <p id="loginError"> </p>
       <Button 
         size="small" 
         variant="contained"
