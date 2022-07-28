@@ -32,17 +32,17 @@ function AddItem( { onFormSubmit } ) {
       .then(newObj => onFormSubmit(newObj))
       navigate('/inventory')
     } else {
-      alert("All items are required to submit to inventory")
+      alert("Name, image, and price are required to submit to inventory")
     }
   }
 
   return (
-    <Box
+  <Box
       component="form"
       sx={{
         '& .MuiTextField-root': { m: 1, width: '25ch' },
       }}
-    >
+  >
     <div>
       <br />
       <TextField
@@ -72,7 +72,7 @@ function AddItem( { onFormSubmit } ) {
       <TextField
           select
           id="outlined-required"
-          defaultValue=""
+          defaultValue="In Stock"
           label="Select"
           name="available"
           onChange={handleFormChange}

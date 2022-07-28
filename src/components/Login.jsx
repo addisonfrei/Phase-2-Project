@@ -23,7 +23,9 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
             setIsLoggedIn(isLoggedIn => !isLoggedIn)
             navigate('/inventory')
         } else {
-            alert('Invalid login!  Please try again!')
+            const error = document.getElementById("errorMessage")
+            error.style.color="red"
+            error.textContent="Invalid credentials! Please try again."
         }
     }
 
@@ -50,11 +52,14 @@ const Login = ({isLoggedIn, setIsLoggedIn}) => {
         type="password"
         id="outlined-required-password"
         label="Password"
-        name='password'
+        name="password"
         value={user.password}
         onChange={handleFormChange}
       />
       <br />
+      <p id="errorMessage">
+        
+      </p>
       <Button 
         size="small" 
         variant="contained"
