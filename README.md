@@ -2,10 +2,10 @@
 Antique Reproduction E-Commerce is a application that allows users to view a list of inventory.  The app admin is able to add and/or remove items from inventory
 
 ## Installation
-Fork and clone
-Open project folder, run npm install
-Run json-server --port 3001 --watch db.json
-Run nmp start
+* Fork and clone
+* Open project folder, run npm install
+* Run json-server --port 3001 --watch db.json
+* Run nmp start
 
 ## Requirments
 * Uses Node version 16.14.2
