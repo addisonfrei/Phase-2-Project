@@ -14,24 +14,24 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const InventoryContainer = ( { inventoryList, onDeleteItem, isLoggedIn } ) => { 
-    const inventoryCard = inventoryList.map(inventory => (
-            <Grid item xs={6} key={inventory.id}>
-              <Item>
-                <InventoryCard 
-                  inventory={inventory} 
-                  onDeleteItem={onDeleteItem} 
-                  isLoggedIn={isLoggedIn}
-                />
-              </Item>
-            </Grid>
-        ))
-    return (
-        <Box style={{marginTop: "75px"}}>
-          <Grid container spacing={2}>
-            { inventoryCard }
+  const inventoryCard = inventoryList.map(inventory => (
+          <Grid item xs={6} key={inventory.id}>
+            <Item>
+              <InventoryCard 
+                inventory={inventory} 
+                onDeleteItem={onDeleteItem} 
+                isLoggedIn={isLoggedIn}
+              />
+            </Item>
           </Grid>
-        </Box>
-      );
+      ))
+  return (
+    <Box style={{marginTop: "75px"}}>
+      <Grid container spacing={2}>
+        { inventoryCard }
+      </Grid>
+    </Box>
+  );
 }
 
 export default InventoryContainer

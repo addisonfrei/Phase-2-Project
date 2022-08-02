@@ -39,64 +39,64 @@ function AddItem( { onFormSubmit } ) {
   }
 
   return (
-  <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      style={{ marginTop: "75px" }}
-  >
-    <div>
-      <br />
-      <TextField
-        required
-        id="outlined-required"
-        label="Name"
-        name="name"
-        value={formData.name}
-        onChange={handleFormChange}
-      />
-      <TextField
-        required
-        id="outlined-required"
-        label="Image"
-        name='image'
-        value={formData.image}
-        onChange={handleFormChange}
-      />
-      <TextField
-        required
-        id="outlined-required"
-        label="Item Price"
-        name='price'
-        value={formData.price}
-        onChange={handleFormChange}
-      />
-      <TextField
-          select
+    <Box
+        component="form"
+        sx={{
+          '& .MuiTextField-root': { m: 1, width: '25ch' },
+        }}
+        style={{ marginTop: "75px" }}
+    >
+      <div>
+        <br />
+        <TextField
+          required
           id="outlined-required"
-          defaultValue=""
-          label="Select"
-          name="available"
+          label="Name"
+          name="name"
+          value={formData.name}
           onChange={handleFormChange}
-          helperText="Please select availability"
-          variant="standard"
+        />
+        <TextField
+          required
+          id="outlined-required"
+          label="Image"
+          name='image'
+          value={formData.image}
+          onChange={handleFormChange}
+        />
+        <TextField
+          required
+          id="outlined-required"
+          label="Item Price"
+          name='price'
+          value={formData.price}
+          onChange={handleFormChange}
+        />
+        <TextField
+            select
+            id="outlined-required"
+            defaultValue=""
+            label="Select"
+            name="available"
+            onChange={handleFormChange}
+            helperText="Please select availability"
+            variant="standard"
+          >
+            <MenuItem value="In Stock">In Stock</MenuItem>
+            <MenuItem value="Out of Stock">Out of Stock</MenuItem>
+          </TextField>
+        <br />
+        <p id="formError"> </p>
+        <Button 
+          variant="contained"
+          size="small"
+          startIcon={<SendIcon />}
+          onClick={handleFormSubmit}
         >
-          <MenuItem value="In Stock">In Stock</MenuItem>
-          <MenuItem value="Out of Stock">Out of Stock</MenuItem>
-        </TextField>
-      <br />
-      <p id="formError"> </p>
-      <Button 
-        variant="contained"
-        size="small"
-        startIcon={<SendIcon />}
-        onClick={handleFormSubmit}
-      >
-        Submit
-      </Button>
-    </div>
-  </Box>
+          Submit
+        </Button>
+      </div>
+    </Box>
   )
 }
 

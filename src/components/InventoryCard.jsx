@@ -17,43 +17,43 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
             .then(() => onDeleteItem(inventory))
     }
    
-    return (
-        <Card>
-          <CardContent>
-            <img 
-                src={image} 
-                alt={name} 
-                height='500px' 
-                width='600px' 
-            />
-          </CardContent>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              {name}
-            </Typography>
-            <Typography variant="body1">
-              ${price}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {available}
-            </Typography>
-          </CardContent>
-          <CardActions >
-            {isLoggedIn ? (
-              <Button 
-                variant="contained" 
-                size="small" 
-                startIcon={<DeleteIcon />} 
-                onClick={handleItemDelete}
-                >
-                  Delete
-              </Button>
-            ) : (
-              null
-            )}
-          </CardActions>
-        </Card>
-      );
+  return (
+    <Card>
+      <CardContent>
+        <img 
+            src={image} 
+            alt={name} 
+            height='500px' 
+            width='600px' 
+        />
+      </CardContent>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {name}
+        </Typography>
+        <Typography variant="body1">
+          ${price}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {available}
+        </Typography>
+      </CardContent>
+      <CardActions >
+        {isLoggedIn ? (
+          <Button 
+            variant="contained" 
+            size="small" 
+            startIcon={<DeleteIcon />} 
+            onClick={handleItemDelete}
+            >
+              Delete
+          </Button>
+        ) : (
+          null
+        )}
+      </CardActions>
+    </Card>
+  );
 }
 
 export default InventoryCard

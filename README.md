@@ -7,7 +7,7 @@ Antique Reproduction E-Commerce is a application that allows users to view a lis
 * Run json-server --port 3001 --watch db.json
 * Run nmp start
 
-## Requirments
+## Requirements
 * Uses Node version 16.14.2
 * Have json-server installed
 
