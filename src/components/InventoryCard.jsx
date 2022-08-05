@@ -34,9 +34,15 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
         <Typography variant="body1">
           ${price}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {available}
-        </Typography>
+        {available === "Out of Stock" ? (
+          <Typography variant="body2" color="red">
+            {available}
+          </Typography>
+        ) : (
+          <Typography variant="body2" color="text.secondary">
+            {available}  
+          </Typography>
+        )}
       </CardContent>
       <CardActions >
         {isLoggedIn ? (

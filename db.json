@@ -12,7 +12,7 @@
       "name": "Black Horse Tavern Inn",
       "image": "images/blackHorse.jpg",
       "price": "49.99",
-      "available": "In Stock"
+      "available": "Out of Stock"
     },
     {
       "id": 3,

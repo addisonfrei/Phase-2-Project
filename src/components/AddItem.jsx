@@ -37,7 +37,7 @@ function AddItem( { onFormSubmit } ) {
       error.style.color="red"
     }
   }
-
+  console.log(formData)
   return (
     <Box
         component="form"
@@ -84,7 +84,8 @@ function AddItem( { onFormSubmit } ) {
           >
             <MenuItem value="In Stock">In Stock</MenuItem>
             <MenuItem value="Out of Stock">Out of Stock</MenuItem>
-          </TextField>
+        </TextField>
+        
         <br />
         <p id="formError"> </p>
         <Button 
