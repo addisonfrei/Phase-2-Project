@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
-    const { id, name, price, image, available } = inventory
+    let{ id, name, price, image, available } = inventory
 
     function handleItemDelete() {
         fetch(`http://localhost:3001/inventory/${id}`, {
@@ -16,7 +16,7 @@ const InventoryCard = ( { inventory, onDeleteItem, isLoggedIn } ) => {
             .then(r => r.json())
             .then(() => onDeleteItem(inventory))
     }
-   
+    
   return (
     <Card>
       <CardContent>
